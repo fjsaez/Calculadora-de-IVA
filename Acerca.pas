@@ -34,7 +34,8 @@ uses Calc;
 
 procedure TFAcerca.BitBtn1Click(Sender: TObject);
 begin
-  FCalc.MEMonto.SetFocus;  Close
+  FCalc.NBMonto.SetFocus;
+  Close
 end;
 
 procedure TFAcerca.FormShow(Sender: TObject);

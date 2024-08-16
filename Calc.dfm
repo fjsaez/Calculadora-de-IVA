@@ -2,196 +2,262 @@ object FCalc: TFCalc
   Left = 227
   Top = 154
   HelpType = htKeyword
+  Margins.Left = 4
+  Margins.Top = 4
+  Margins.Right = 4
+  Margins.Bottom = 4
+  BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Calculadora de IVA ***'
-  ClientHeight = 238
-  ClientWidth = 383
+  ClientHeight = 298
+  ClientWidth = 479
   Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   Position = poScreenCenter
   OnKeyPress = FormKeyPress
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object Label1: TLabel
-    Left = 21
-    Top = 24
-    Width = 30
-    Height = 13
+    Left = 26
+    Top = 30
+    Width = 37
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Monto'
   end
   object Label2: TLabel
-    Left = 175
-    Top = 25
-    Width = 28
-    Height = 13
+    Left = 219
+    Top = 31
+    Width = 36
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = '% IVA'
   end
   object Label3: TLabel
-    Left = 56
-    Top = 115
-    Width = 46
-    Height = 13
+    Left = 70
+    Top = 144
+    Width = 58
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'SubTotal:'
   end
   object LSubTotal: TLabel
-    Left = 274
-    Top = 112
-    Width = 36
-    Height = 20
+    Left = 345
+    Top = 140
+    Width = 43
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Alignment = taRightJustify
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -16
+    Font.Height = -20
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object LIVA: TLabel
-    Left = 274
-    Top = 136
-    Width = 36
-    Height = 20
+    Left = 345
+    Top = 170
+    Width = 43
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Alignment = taRightJustify
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -16
+    Font.Height = -20
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 56
-    Top = 139
-    Width = 20
-    Height = 13
+    Left = 70
+    Top = 174
+    Width = 24
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'IVA:'
   end
   object LTotal: TLabel
-    Left = 274
-    Top = 160
-    Width = 36
-    Height = 20
+    Left = 345
+    Top = 200
+    Width = 43
+    Height = 25
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Alignment = taRightJustify
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -16
+    Font.Height = -20
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 56
-    Top = 163
-    Width = 34
-    Height = 13
+    Left = 70
+    Top = 204
+    Width = 41
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Total:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -14
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Bevel1: TBevel
-    Left = 23
-    Top = 107
-    Width = 337
-    Height = 79
+    Left = 29
+    Top = 134
+    Width = 421
+    Height = 99
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Shape = bsFrame
   end
-  object MEMonto: TMaskEdit
-    Left = 63
-    Top = 20
-    Width = 91
-    Height = 21
-    BiDiMode = bdLeftToRight
-    EditMask = '!99999999999,99;1; '
-    MaxLength = 14
-    ParentBiDiMode = False
-    TabOrder = 0
-    Text = '           ,  '
-    OnExit = MEMontoExit
-  end
   object CB1: TCheckBox
-    Left = 126
-    Top = 47
-    Width = 131
-    Height = 17
+    Left = 158
+    Top = 59
+    Width = 163
+    Height = 21
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'IVA incluido en el Total'
-    TabOrder = 2
+    TabOrder = 0
     OnClick = CB1Click
   end
-  object MEIVA: TMaskEdit
-    Left = 215
-    Top = 21
-    Width = 35
-    Height = 21
-    EditMask = '!99,99;1; '
-    MaxLength = 5
-    TabOrder = 1
-    Text = '  ,  '
-    OnExit = MEIVAExit
-  end
   object BCalcular: TButton
-    Left = 266
-    Top = 18
-    Width = 75
-    Height = 29
+    Left = 333
+    Top = 23
+    Width = 93
+    Height = 36
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Calcular'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -14
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 1
     OnClick = BCalcularClick
   end
   object Button1: TButton
-    Left = 164
-    Top = 200
-    Width = 56
-    Height = 25
+    Left = 205
+    Top = 250
+    Width = 70
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Cancel = True
     Caption = 'Salir'
-    TabOrder = 4
+    TabOrder = 2
     OnClick = Button1Click
   end
   object BBAcerca: TBitBtn
-    Left = 356
+    Left = 445
     Top = 0
-    Width = 27
-    Height = 26
+    Width = 34
+    Height = 33
     HelpType = htKeyword
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = ' '
     Kind = bkHelp
     NumGlyphs = 2
-    TabOrder = 5
+    TabOrder = 3
     TabStop = False
     OnClick = BBAcercaClick
   end
   object BLimpiar: TButton
-    Left = 154
-    Top = 72
-    Width = 75
-    Height = 25
+    Left = 193
+    Top = 90
+    Width = 93
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Limpiar'
-    TabOrder = 6
+    TabOrder = 4
     TabStop = False
     OnClick = BLimpiarClick
   end
-  object XPManifest1: TXPManifest
-    Left = 8
-    Top = 200
+  object NBMonto: TNumberBox
+    Left = 71
+    Top = 27
+    Width = 114
+    Height = 24
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Alignment = taRightJustify
+    CurrencyFormat = nbcfNone
+    DisplayFormat = '0.00'
+    Mode = nbmCurrency
+    MaxLength = 12
+    TabOrder = 5
+    SpinButtonOptions.ButtonWidth = 21
+  end
+  object NBIVA: TNumberBox
+    Left = 269
+    Top = 27
+    Width = 44
+    Height = 24
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Alignment = taRightJustify
+    CurrencyFormat = nbcfNone
+    DisplayFormat = '0.00'
+    Mode = nbmCurrency
+    MaxLength = 5
+    TabOrder = 6
+    SpinButtonOptions.ButtonWidth = 21
   end
 end

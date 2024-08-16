@@ -1,70 +1,97 @@
 object FAcerca: TFAcerca
   Left = 998
   Top = 304
+  Margins.Left = 4
+  Margins.Top = 4
+  Margins.Right = 4
+  Margins.Bottom = 4
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Acerca...'
-  ClientHeight = 204
-  ClientWidth = 253
+  ClientHeight = 255
+  ClientWidth = 319
   Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -14
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnShow = FormShow
-  PixelsPerInch = 96
-  TextHeight = 13
+  PixelsPerInch = 120
+  TextHeight = 16
   object Label1: TLabel
-    Left = 59
-    Top = 43
-    Width = 135
-    Height = 16
+    Left = 74
+    Top = 54
+    Width = 156
+    Height = 20
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Calculadora de IVA'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object LVersion: TLabel
-    Left = 103
-    Top = 58
-    Width = 48
-    Height = 13
+    Left = 129
+    Top = 73
+    Width = 60
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Alignment = taCenter
     AutoSize = False
   end
   object Label3: TLabel
-    Left = 50
-    Top = 84
-    Width = 153
-    Height = 13
+    Left = 63
+    Top = 105
+    Width = 189
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Autor: TSU Francisco J. S'#225'ez S.'
   end
   object Label4: TLabel
-    Left = 55
-    Top = 107
-    Width = 143
-    Height = 13
+    Left = 69
+    Top = 134
+    Width = 181
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Caption = 'Calabozo, Gu'#225'rico. Venezuela'
   end
   object LFecha: TLabel
-    Left = 82
-    Top = 131
-    Width = 89
-    Height = 13
+    Left = 103
+    Top = 164
+    Width = 111
+    Height = 16
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Alignment = taCenter
     AutoSize = False
   end
   object Image1: TImage
-    Left = 110
-    Top = 8
-    Width = 33
-    Height = 25
+    Left = 138
+    Top = 10
+    Width = 41
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Picture.Data = {
       055449636F6E0000010001002020100000000000E80200001600000028000000
       2000000040000000010004000000000080020000000000000000000000000000
@@ -93,14 +120,17 @@ object FAcerca: TFAcerca
       FFFFFFFF}
   end
   object BitBtn1: TBitBtn
-    Left = 89
-    Top = 154
-    Width = 75
-    Height = 25
+    Left = 111
+    Top = 193
+    Width = 94
+    Height = 31
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
     Cancel = True
     Caption = 'OK'
     Default = True
-    DoubleBuffered = True
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
       0400000000006801000000000000000000001000000000000000000000000000
@@ -120,7 +150,6 @@ object FAcerca: TFAcerca
       0000}
     ModalResult = 1
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 0
     OnClick = BitBtn1Click
   end

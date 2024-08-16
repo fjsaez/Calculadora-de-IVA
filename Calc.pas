@@ -4,15 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Mask, ExtCtrls, Buttons, XPMan;
+  Dialogs, StdCtrls, Mask, ExtCtrls, Buttons, Vcl.NumberBox;
 
 type
   TFCalc = class(TForm)
     Label1: TLabel;
-    MEMonto: TMaskEdit;
     CB1: TCheckBox;
     Label2: TLabel;
-    MEIVA: TMaskEdit;
     Label3: TLabel;
     LSubTotal: TLabel;
     LIVA: TLabel;
@@ -23,14 +21,13 @@ type
     Button1: TButton;
     Bevel1: TBevel;
     BBAcerca: TBitBtn;
-    XPManifest1: TXPManifest;
     BLimpiar: TButton;
+    NBMonto: TNumberBox;
+    NBIVA: TNumberBox;
     function EliminaEspacio(Cadena: string): string;
     procedure Button1Click(Sender: TObject);
     procedure BCalcularClick(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
-    procedure MEMontoExit(Sender: TObject);
-    procedure MEIVAExit(Sender: TObject);
     procedure BBAcercaClick(Sender: TObject);
     procedure CB1Click(Sender: TObject);
     procedure BLimpiarClick(Sender: TObject);
@@ -70,10 +67,10 @@ begin
   LIVA.Caption:='0,00';
   LTotal.Caption:='0,00';
   LSubTotal.Caption:='0,00';
-  MEMonto.Clear;
-  MEIVA.Clear;
+  NBMonto.Value:=0.0;
+  NBIVA.Value:=0.0;
   CB1.Checked:=false;
-  MEMonto.SetFocus;
+  NBMonto.SetFocus;
 end;
 
 procedure TFCalc.CB1Click(Sender: TObject);
@@ -87,19 +84,27 @@ var
   Importe,IVA,SubTotal: Single;  
   STotal,SIVA,Total: string[15];
 begin
-  Importe:=StrToFloat(EliminaEspacio(MEMonto.Text));
-  IVA:=StrToFloat(EliminaEspacio(MEIVA.Text));
+  //Importe:=StrToFloat(EliminaEspacio(MEMonto.Text));
+  Importe:=NBMonto.Value;
+  IVA:=NBIVA.Value;
   if CB1.Checked then
   begin   //Cálculo con el IVA incluido:
-    STotal:=FloatToStrF(Importe/((IVA/100)+1),ffNumber,10,2);
-    SIVA:=FloatToStrF(Importe-(Importe/((IVA/100)+1)),ffNumber,10,2);
-    Total:=FloatToStrF(Importe,ffNumber,10,2);
+    //STotal:=FloatToStrF(Importe/((IVA/100)+1),ffNumber,10,2);
+    //SIVA:=FloatToStrF(Importe-(Importe/((IVA/100)+1)),ffNumber,10,2);
+    //Total:=FloatToStrF(Importe,ffNumber,10,2);
+
+    STotal:=FormatFloat('#,##0.00',Importe/((IVA/100)+1));
+    SIVA:=FormatFloat('#,##0.00',Importe-(Importe/((IVA/100)+1)));
+    Total:=FormatFloat('#,##0.00',Importe);
   end
   else
   begin   //Cálculo sin el IVA incluido:
-    STotal:=FloatToStrF(Importe,ffNumber,10,2);
-    SIVA:=FloatToStrF(Importe*(IVA/100),ffNumber,10,2);
-    Total:=FloatToStrF(Importe+(Importe*IVA/100),ffNumber,10,2);
+    //STotal:=FloatToStrF(Importe,ffNumber,10,2);
+    //SIVA:=FloatToStrF(Importe*(IVA/100),ffNumber,10,2);
+    //Total:=FloatToStrF(Importe+(Importe*IVA/100),ffNumber,10,2);
+    STotal:=FormatFloat('#,##0.00',Importe);
+    SIVA:=FormatFloat('#,##0.00',Importe*(IVA/100));
+    Total:=FormatFloat('#,##0.00',Importe+(Importe*IVA/100));
   end;
   LSubTotal.Caption:=STotal;
   LIVA.Caption:=SIVA;
@@ -118,16 +123,7 @@ end;
 procedure TFCalc.FormShow(Sender: TObject);
 begin
   Caption:=Caption+' '+Version;
-end;
-
-procedure TFCalc.MEMontoExit(Sender: TObject);
-begin
-  MEMonto.Text:=EliminaEspacio(MEMonto.Text);
-end;
-
-procedure TFCalc.MEIVAExit(Sender: TObject);
-begin
-  MEIVA.Text:=EliminaEspacio(MEIVA.Text)
+  NBMonto.SetFocus;
 end;
 
 procedure TFCalc.BBAcercaClick(Sender: TObject);
