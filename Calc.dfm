@@ -242,6 +242,7 @@ object FCalc: TFCalc
     MaxLength = 12
     TabOrder = 5
     SpinButtonOptions.ButtonWidth = 21
+    OnKeyPress = NBMontoKeyPress
   end
   object NBIVA: TNumberBox
     Left = 269

@@ -32,6 +32,7 @@ type
     procedure CB1Click(Sender: TObject);
     procedure BLimpiarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure NBMontoKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -89,10 +90,6 @@ begin
   IVA:=NBIVA.Value;
   if CB1.Checked then
   begin   //Cálculo con el IVA incluido:
-    //STotal:=FloatToStrF(Importe/((IVA/100)+1),ffNumber,10,2);
-    //SIVA:=FloatToStrF(Importe-(Importe/((IVA/100)+1)),ffNumber,10,2);
-    //Total:=FloatToStrF(Importe,ffNumber,10,2);
-
     STotal:=FormatFloat('#,##0.00',Importe/((IVA/100)+1));
     SIVA:=FormatFloat('#,##0.00',Importe-(Importe/((IVA/100)+1)));
     Total:=FormatFloat('#,##0.00',Importe);
@@ -124,6 +121,12 @@ procedure TFCalc.FormShow(Sender: TObject);
 begin
   Caption:=Caption+' '+Version;
   NBMonto.SetFocus;
+end;
+
+procedure TFCalc.NBMontoKeyPress(Sender: TObject; var Key: Char);
+begin
+  if TNumberBox(Sender).is then
+
 end;
 
 procedure TFCalc.BBAcercaClick(Sender: TObject);
