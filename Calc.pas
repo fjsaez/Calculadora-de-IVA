@@ -85,7 +85,6 @@ var
   Importe,IVA,SubTotal: Single;  
   STotal,SIVA,Total: string[15];
 begin
-  //Importe:=StrToFloat(EliminaEspacio(MEMonto.Text));
   Importe:=NBMonto.Value;
   IVA:=NBIVA.Value;
   if CB1.Checked then
