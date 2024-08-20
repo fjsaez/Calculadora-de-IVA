@@ -1,4 +1,4 @@
-unit Calc;
+﻿unit Calc;
 
 interface
 
@@ -38,12 +38,13 @@ type
   public
     { Public declarations }
     const
-      Version='v1.5';  //versi�n del programa
+      Version='v1.5';  //versión del programa
       Fecha='Sep. 2.010';
   end;
 
 var
   FCalc: TFCalc;
+  sEnt: string;
 
 implementation
 
@@ -57,7 +58,7 @@ begin
   Result:=Cadena;
 end;
 
-{Bot�n Salir}
+{Botón Salir}
 procedure TFCalc.Button1Click(Sender: TObject);
 begin
   Close;
@@ -79,25 +80,22 @@ begin
   BCalcularClick(Self);
 end;
 
-{Bot�n Calcular}
+{Botón Calcular}
 procedure TFCalc.BCalcularClick(Sender: TObject);
 var
-  Importe,IVA,SubTotal: Single;  
+  Importe,IVA,SubTotal: Single;
   STotal,SIVA,Total: string[15];
 begin
   Importe:=NBMonto.Value;
   IVA:=NBIVA.Value;
   if CB1.Checked then
-  begin   //C�lculo con el IVA incluido:
+  begin   //Cálculo con el IVA incluido:
     STotal:=FormatFloat('#,##0.00',Importe/((IVA/100)+1));
     SIVA:=FormatFloat('#,##0.00',Importe-(Importe/((IVA/100)+1)));
     Total:=FormatFloat('#,##0.00',Importe);
   end
   else
-  begin   //C�lculo sin el IVA incluido:
-    //STotal:=FloatToStrF(Importe,ffNumber,10,2);
-    //SIVA:=FloatToStrF(Importe*(IVA/100),ffNumber,10,2);
-    //Total:=FloatToStrF(Importe+(Importe*IVA/100),ffNumber,10,2);
+  begin   //Cálculo sin el IVA incluido:
     STotal:=FormatFloat('#,##0.00',Importe);
     SIVA:=FormatFloat('#,##0.00',Importe*(IVA/100));
     Total:=FormatFloat('#,##0.00',Importe+(Importe*IVA/100));
@@ -111,7 +109,7 @@ procedure TFCalc.FormKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key=#13 then
   begin
-    SelectNext(ActiveControl,true,true);  
+    SelectNext(ActiveControl,true,true);
    	Key:=#0
   end
 end;
@@ -124,7 +122,13 @@ end;
 
 procedure TFCalc.NBMontoKeyPress(Sender: TObject; var Key: Char);
 begin
-  if TNumberBox(Sender).is then
+  {if Key=8 then sEnt:=Copy(sEnt,1,sEnt.Length-1)
+  else
+    if CharInSet(KeyChar,['0'..[9]]) then sEnt:=sEnt+KeyChar;
+  NBMonto}
+
+
+  //if TNumberBox(Sender).is then
 
 end;
 

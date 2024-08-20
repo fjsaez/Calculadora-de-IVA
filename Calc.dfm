@@ -86,7 +86,7 @@ object FCalc: TFCalc
     Alignment = taRightJustify
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
+    Font.Color = clRed
     Font.Height = -20
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
@@ -104,10 +104,10 @@ object FCalc: TFCalc
     Caption = 'IVA:'
   end
   object LTotal: TLabel
-    Left = 345
+    Left = 338
     Top = 200
-    Width = 43
-    Height = 25
+    Width = 50
+    Height = 29
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -115,8 +115,8 @@ object FCalc: TFCalc
     Alignment = taRightJustify
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -20
+    Font.Color = clBlue
+    Font.Height = -23
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
