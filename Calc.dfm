@@ -25,7 +25,7 @@ object FCalc: TFCalc
   TextHeight = 16
   object Bevel1: TBevel
     Left = 29
-    Top = 134
+    Top = 138
     Width = 421
     Height = 99
     Margins.Left = 4
@@ -35,41 +35,59 @@ object FCalc: TFCalc
     Shape = bsFrame
   end
   object Label1: TLabel
-    Left = 26
+    Left = 29
     Top = 30
-    Width = 37
-    Height = 16
+    Width = 51
+    Height = 20
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = 'Monto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label2: TLabel
-    Left = 219
-    Top = 31
-    Width = 36
-    Height = 16
+    Left = 217
+    Top = 30
+    Width = 51
+    Height = 20
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = '% IVA'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 70
-    Top = 148
-    Width = 58
-    Height = 16
+    Top = 145
+    Width = 86
+    Height = 25
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = 'SubTotal:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
   end
   object LSubTotal: TLabel
     Left = 345
-    Top = 141
+    Top = 145
     Width = 43
     Height = 25
     Margins.Left = 4
@@ -87,7 +105,7 @@ object FCalc: TFCalc
   end
   object LIVA: TLabel
     Left = 345
-    Top = 171
+    Top = 175
     Width = 43
     Height = 25
     Margins.Left = 4
@@ -105,18 +123,24 @@ object FCalc: TFCalc
   end
   object Label6: TLabel
     Left = 70
-    Top = 178
-    Width = 24
-    Height = 16
+    Top = 175
+    Width = 39
+    Height = 25
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = 'IVA:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
   end
   object LTotal: TLabel
     Left = 338
-    Top = 198
+    Top = 202
     Width = 50
     Height = 29
     Margins.Left = 4
@@ -134,9 +158,9 @@ object FCalc: TFCalc
   end
   object Label8: TLabel
     Left = 70
-    Top = 208
-    Width = 41
-    Height = 16
+    Top = 205
+    Width = 57
+    Height = 25
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -144,21 +168,27 @@ object FCalc: TFCalc
     Caption = 'Total:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -14
+    Font.Height = -20
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object CB1: TCheckBox
-    Left = 158
+    Left = 133
     Top = 59
-    Width = 163
+    Width = 213
     Height = 21
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Caption = 'IVA incluido en el Total'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 0
     OnClick = CB1Click
   end
@@ -214,7 +244,7 @@ object FCalc: TFCalc
   end
   object BLimpiar: TButton
     Left = 193
-    Top = 90
+    Top = 94
     Width = 93
     Height = 31
     Margins.Left = 4
@@ -227,7 +257,7 @@ object FCalc: TFCalc
     OnClick = BLimpiarClick
   end
   object NBMonto: TNumberBox
-    Left = 71
+    Left = 88
     Top = 27
     Width = 114
     Height = 24
@@ -244,7 +274,7 @@ object FCalc: TFCalc
     SpinButtonOptions.ButtonWidth = 21
   end
   object NBIVA: TNumberBox
-    Left = 269
+    Left = 276
     Top = 27
     Width = 44
     Height = 24
