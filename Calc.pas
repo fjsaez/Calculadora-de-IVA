@@ -32,7 +32,6 @@ type
     procedure CB1Click(Sender: TObject);
     procedure BLimpiarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure NBMontoKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -120,21 +119,10 @@ begin
   NBMonto.SetFocus;
 end;
 
-procedure TFCalc.NBMontoKeyPress(Sender: TObject; var Key: Char);
-begin
-  {if Key=8 then sEnt:=Copy(sEnt,1,sEnt.Length-1)
-  else
-    if CharInSet(KeyChar,['0'..[9]]) then sEnt:=sEnt+KeyChar;
-  NBMonto}
-
-
-  //if TNumberBox(Sender).is then
-
-end;
-
 procedure TFCalc.BBAcercaClick(Sender: TObject);
 begin
   FAcerca.ShowModal;
+  NBMonto.SetFocus;
 end;
 
 end.

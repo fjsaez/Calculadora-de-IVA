@@ -23,6 +23,17 @@ object FCalc: TFCalc
   OnShow = FormShow
   PixelsPerInch = 120
   TextHeight = 16
+  object Bevel1: TBevel
+    Left = 29
+    Top = 134
+    Width = 421
+    Height = 99
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Shape = bsFrame
+  end
   object Label1: TLabel
     Left = 26
     Top = 30
@@ -47,7 +58,7 @@ object FCalc: TFCalc
   end
   object Label3: TLabel
     Left = 70
-    Top = 144
+    Top = 148
     Width = 58
     Height = 16
     Margins.Left = 4
@@ -58,7 +69,7 @@ object FCalc: TFCalc
   end
   object LSubTotal: TLabel
     Left = 345
-    Top = 140
+    Top = 141
     Width = 43
     Height = 25
     Margins.Left = 4
@@ -76,7 +87,7 @@ object FCalc: TFCalc
   end
   object LIVA: TLabel
     Left = 345
-    Top = 170
+    Top = 171
     Width = 43
     Height = 25
     Margins.Left = 4
@@ -94,7 +105,7 @@ object FCalc: TFCalc
   end
   object Label6: TLabel
     Left = 70
-    Top = 174
+    Top = 178
     Width = 24
     Height = 16
     Margins.Left = 4
@@ -105,7 +116,7 @@ object FCalc: TFCalc
   end
   object LTotal: TLabel
     Left = 338
-    Top = 200
+    Top = 198
     Width = 50
     Height = 29
     Margins.Left = 4
@@ -123,7 +134,7 @@ object FCalc: TFCalc
   end
   object Label8: TLabel
     Left = 70
-    Top = 204
+    Top = 208
     Width = 41
     Height = 16
     Margins.Left = 4
@@ -137,17 +148,6 @@ object FCalc: TFCalc
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
-  end
-  object Bevel1: TBevel
-    Left = 29
-    Top = 134
-    Width = 421
-    Height = 99
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Shape = bsFrame
   end
   object CB1: TCheckBox
     Left = 158
@@ -164,7 +164,7 @@ object FCalc: TFCalc
   end
   object BCalcular: TButton
     Left = 333
-    Top = 23
+    Top = 21
     Width = 93
     Height = 36
     Margins.Left = 4
@@ -242,7 +242,6 @@ object FCalc: TFCalc
     MaxLength = 12
     TabOrder = 5
     SpinButtonOptions.ButtonWidth = 21
-    OnKeyPress = NBMontoKeyPress
   end
   object NBIVA: TNumberBox
     Left = 269
