@@ -35,7 +35,6 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
     const
       Version='v1.5';  //versión del programa
       Fecha='Sep. 2.010';
