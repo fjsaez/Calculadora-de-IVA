@@ -4,17 +4,18 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons, ExtCtrls;
+  Dialogs, StdCtrls, Buttons, ExtCtrls, PngSpeedButton, Vcl.Imaging.pngimage,
+  PngBitBtn;
 
 type
   TFAcerca = class(TForm)
-    BitBtn1: TBitBtn;
     Label1: TLabel;
     LVersion: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     LFecha: TLabel;
     Image1: TImage;
+    PngBitBtn1: TPngBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private

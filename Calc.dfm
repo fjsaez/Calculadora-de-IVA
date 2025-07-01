@@ -1,6 +1,7 @@
 object FCalc: TFCalc
   Left = 227
   Top = 154
+  Hint = 'Salir de la aplicaci'#243'n'
   HelpType = htKeyword
   Margins.Left = 4
   Margins.Top = 4
@@ -9,70 +10,26 @@ object FCalc: TFCalc
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Calculadora de IVA ***'
-  ClientHeight = 298
-  ClientWidth = 479
+  ClientHeight = 503
+  ClientWidth = 582
   Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -14
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -28
+  Font.Name = 'Arial'
   Font.Style = []
+  FormStyle = fsStayOnTop
   KeyPreview = True
   Position = poScreenCenter
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   PixelsPerInch = 120
-  TextHeight = 16
-  object Bevel1: TBevel
-    Left = 29
-    Top = 138
-    Width = 421
-    Height = 99
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Shape = bsFrame
-  end
-  object Label1: TLabel
-    Left = 29
-    Top = 30
-    Width = 51
-    Height = 20
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = 'Monto'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -17
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label2: TLabel
-    Left = 217
-    Top = 30
-    Width = 51
-    Height = 20
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = '% IVA'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -17
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
+  TextHeight = 32
   object Label3: TLabel
-    Left = 70
-    Top = 145
-    Width = 86
-    Height = 25
+    Left = 41
+    Top = 183
+    Width = 113
+    Height = 32
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -80,52 +37,54 @@ object FCalc: TFCalc
     Caption = 'SubTotal:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -27
+    Font.Name = 'Arial'
     Font.Style = []
     ParentFont = False
   end
   object LSubTotal: TLabel
-    Left = 345
-    Top = 145
-    Width = 43
-    Height = 25
+    Left = 165
+    Top = 172
+    Width = 310
+    Height = 50
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Alignment = taRightJustify
+    AutoSize = False
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
-    Font.Height = -20
+    Font.Height = -40
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object LIVA: TLabel
-    Left = 345
-    Top = 175
-    Width = 43
-    Height = 25
+    Left = 165
+    Top = 230
+    Width = 310
+    Height = 50
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Alignment = taRightJustify
+    AutoSize = False
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
-    Font.Height = -20
+    Font.Height = -40
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 70
-    Top = 175
-    Width = 39
-    Height = 25
+    Left = 41
+    Top = 241
+    Width = 49
+    Height = 32
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -133,34 +92,35 @@ object FCalc: TFCalc
     Caption = 'IVA:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -27
+    Font.Name = 'Arial'
     Font.Style = []
     ParentFont = False
   end
   object LTotal: TLabel
-    Left = 338
-    Top = 202
-    Width = 50
-    Height = 29
+    Left = 165
+    Top = 288
+    Width = 310
+    Height = 50
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
     Alignment = taRightJustify
+    AutoSize = False
     Caption = '0,00'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlue
-    Font.Height = -23
+    Font.Height = -40
     Font.Name = 'MS Sans Serif'
     Font.Style = [fsBold]
     ParentFont = False
   end
   object Label8: TLabel
-    Left = 70
-    Top = 205
-    Width = 57
-    Height = 25
+    Left = 41
+    Top = 299
+    Width = 75
+    Height = 32
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -168,35 +128,250 @@ object FCalc: TFCalc
     Caption = 'Total:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -27
+    Font.Name = 'Arial'
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object CB1: TCheckBox
-    Left = 133
-    Top = 59
-    Width = 213
-    Height = 21
+  object SBMemSubTotal: TPngSpeedButton
+    Left = 491
+    Top = 172
+    Width = 54
+    Height = 54
+    Hint = 'Copiar SubTotal'
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
-    Caption = 'IVA incluido en el Total'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -17
-    Font.Name = 'MS Sans Serif'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 0
-    OnClick = CB1Click
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = SBMemSubTotalClick
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000002634944415478DA636418
+      E28071A01D30683C3071D12AB9FF4C2CFD40A61D54E8F0BFFFCC6545B1FE7706
+      BD07A08EBF00640AA249BD6362F8AF9F1713FC64507B60C292756B815410106F
+      61FEC792F787F93723E33FA6C90C8CFFBD8016ACC98F090A1DEC1EF804A478FF
+      3233C91547063C06894D59BA56FECF7FC607400B3E023D2030201E70894B9363
+      FCF30F96AE454062DE5E5E38D5FFF9F3C7A42421EC2C88DDBD7C8339EBDF7F27
+      70A9DDBA6D1B8CF986E13FC36126E6FF653B97CC2539BFE0F400D4F118E91A9F
+      0780E0251333B3E7AF9F3F99589859B6034D1725C20330F09EF1DF5FFD5D2BE6
+      3FA68A075CA35260E91A0510F000D1008B07188031B166F7F23924E517DC3110
+      95F20928C90B6277D79430E86BAA83C5272E5D4F150FE4470782E90B576F3094
+      B5F5C2843FEE5E3687A4FC822F06FEC3D8BB96CE868BCF5DBF83E1CBB7EF1439
+      9E978B932129D003CE778B4E85B3811E20A96021D903F79FBE60D87BF23CC3D7
+      EF3FC8723C0FD0F1CEE6060C0A521203E3015A80510F8C7A60D403A31E18A11E
+      9878FA1756F17C5336AC6A70896F9D900D677B174CC56A6681193B56B78E7A60
+      D87800D971A4025C7960C2A99F70378C7A60587A805A60B41E18B11E18F27960
+      D40303ED016A81D14C3C623D30E4F3C060F7C06720C50362F7D59533E8A8ABD0
+      C403976FDC62286EEE8639E7D3EE65B3F9A9E201B7A8940D40DDFE64072B3980
+      9A83BB6E91691AFF19FF1D63C09C36A21578C7F8EFAF01D586D7410036C1018C
+      0957D84835F501E32746867FBB19FEFD2B24D5F1043D4008109346696DFEA807
+      868D079001B265B81C418C382E33473D306C3C3018C090F700001513FB4028CD
+      01940000000049454E44AE426082}
+  end
+  object SBMemIVA: TPngSpeedButton
+    Left = 491
+    Top = 230
+    Width = 54
+    Height = 54
+    Hint = 'Copiar IVA'
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = SBMemIVAClick
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000002634944415478DA636418
+      E28071A01D30683C3071D12AB9FF4C2CFD40A61D54E8F0BFFFCC6545B1FE7706
+      BD07A08EBF00640AA249BD6362F8AF9F1713FC64507B60C292756B815410106F
+      61FEC792F787F93723E33FA6C90C8CFFBD8016ACC98F090A1DEC1EF804A478FF
+      3233C91547063C06894D59BA56FECF7FC607400B3E023D2030201E70894B9363
+      FCF30F96AE454062DE5E5E38D5FFF9F3C7A42421EC2C88DDBD7C8339EBDF7F27
+      70A9DDBA6D1B8CF986E13FC36126E6FF653B97CC2539BFE0F400D4F118E91A9F
+      0780E0251333B3E7AF9F3F99589859B6034D1725C20330F09EF1DF5FFD5D2BE6
+      3FA68A075CA35260E91A0510F000D1008B07188031B166F7F23924E517DC3110
+      95F20928C90B6277D79430E86BAA83C5272E5D4F150FE4470782E90B576F3094
+      B5F5C2843FEE5E3687A4FC822F06FEC3D8BB96CE868BCF5DBF83E1CBB7EF1439
+      9E978B932129D003CE778B4E85B3811E20A96021D903F79FBE60D87BF23CC3D7
+      EF3FC8723C0FD0F1CEE6060C0A521203E3015A80510F8C7A60D403A31E18A11E
+      9878FA1756F17C5336AC6A70896F9D900D677B174CC56A6681193B56B78E7A60
+      D87800D971A4025C7960C2A99F70378C7A60587A805A60B41E18B11E18F27960
+      D40303ED016A81D14C3C623D30E4F3C060F7C06720C50362F7D59533E8A8ABD0
+      C403976FDC62286EEE8639E7D3EE65B3F9A9E201B7A8940D40DDFE64072B3980
+      9A83BB6E91691AFF19FF1D63C09C36A21578C7F8EFAF01D586D7410036C1018C
+      0957D84835F501E32746867FBB19FEFD2B24D5F1043D4008109346696DFEA807
+      868D079001B265B81C418C382E33473D306C3C3018C090F700001513FB4028CD
+      01940000000049454E44AE426082}
+  end
+  object SBMemTotal: TPngSpeedButton
+    Left = 491
+    Top = 288
+    Width = 54
+    Height = 54
+    Hint = 'Copiar Total'
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = SBMemTotalClick
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000002634944415478DA636418
+      E28071A01D30683C3071D12AB9FF4C2CFD40A61D54E8F0BFFFCC6545B1FE7706
+      BD07A08EBF00640AA249BD6362F8AF9F1713FC64507B60C292756B815410106F
+      61FEC792F787F93723E33FA6C90C8CFFBD8016ACC98F090A1DEC1EF804A478FF
+      3233C91547063C06894D59BA56FECF7FC607400B3E023D2030201E70894B9363
+      FCF30F96AE454062DE5E5E38D5FFF9F3C7A42421EC2C88DDBD7C8339EBDF7F27
+      70A9DDBA6D1B8CF986E13FC36126E6FF653B97CC2539BFE0F400D4F118E91A9F
+      0780E0251333B3E7AF9F3F99589859B6034D1725C20330F09EF1DF5FFD5D2BE6
+      3FA68A075CA35260E91A0510F000D1008B07188031B166F7F23924E517DC3110
+      95F20928C90B6277D79430E86BAA83C5272E5D4F150FE4470782E90B576F3094
+      B5F5C2843FEE5E3687A4FC822F06FEC3D8BB96CE868BCF5DBF83E1CBB7EF1439
+      9E978B932129D003CE778B4E85B3811E20A96021D903F79FBE60D87BF23CC3D7
+      EF3FC8723C0FD0F1CEE6060C0A521203E3015A80510F8C7A60D403A31E18A11E
+      9878FA1756F17C5336AC6A70896F9D900D677B174CC56A6681193B56B78E7A60
+      D87800D971A4025C7960C2A99F70378C7A60587A805A60B41E18B11E18F27960
+      D40303ED016A81D14C3C623D30E4F3C060F7C06720C50362F7D59533E8A8ABD0
+      C403976FDC62286EEE8639E7D3EE65B3F9A9E201B7A8940D40DDFE64072B3980
+      9A83BB6E91691AFF19FF1D63C09C36A21578C7F8EFAF01D586D7410036C1018C
+      0957D84835F501E32746867FBB19FEFD2B24D5F1043D4008109346696DFEA807
+      868D079001B265B81C418C382E33473D306C3C3018C090F700001513FB4028CD
+      01940000000049454E44AE426082}
+  end
+  object PngSpeedButton1: TPngSpeedButton
+    Left = 264
+    Top = 444
+    Width = 50
+    Height = 50
+    Hint = 'Reiniciar datos'
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = BLimpiarClick
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000004FF4944415478DAED596B
+      6C145514BEE7EEB45841420AA4121FF18721888A899810C5C73E6AA475B7D540
+      D05AF10746F0454341136D77CDA4DBD644911AABB121F18126B6696BA2BB5B03
+      89BBDB861812B5114D8DF68FFA1350A015A4859DBDC733BB9D323B4C75763BD3
+      A5494F32D973CF7D9DEFDCD7396781CD7382622BB000A0D80A2C00B0639050CC
+      B35E20F701E2061AF166125DAF8D8D8C9D21E60C71BF32806F041347DAFD8323
+      450720F7BA972857C13300B083945C9367F7119AF98094129FCA8F0E8ECD2900
+      39E9969473AE17C8A2412AAE98CDE42CB332101A9D28EFEADBDA97761CC0AB03
+      BED52E81BDC4DE314BC58DF4031358D75A9B1C750C4030EAA9A6E6DDC42E35A9
+      4E31C438E3F0156DA7619452BF0B0527D50A17942E658A58C95CFC5ECEC08D88
+      55242E3519638C033EDEE24F1EB61D4028EA790A197C40AC64A81AA7AF432A29
+      E994371D3E6D652C79C07D6D2AEDDA01807B4D8C914664DBDA6A12DDB6010846
+      7D8FD07EEF578D69A8EA110276B7D7C64FE463313D1045C03E52A1DE50758103
+      54B5F8E3C9590308C62A6F6128BE2376B14EAC50AF86567FE2FD4214375228E2
+      791E01DE26B644271E9780DF29FBBFFE4D2D34C5DCB771C6B7D39C7B2C03C8DE
+      367C98D8753A718A016E69F527237628AF5173C4534BD7F1E72C779587D24C7A
+      56624A0B9DAB2D54DEDF1A48BC64194073CCBB1B9075E434067C3AEC4F7E68A7
+      F21A0523BE9D649CAE1C2132411AF2CCDC88EE704D72C81280CC2355C6FF2076
+      B94EDC4316A87342798D683B7D41DBA9D6A4EAD4E8C4F20AB3B7C2144030E269
+      2473EFD7894EA75DA935AF571FF9D309C51B7BEF2E5B7C755903BD05AFD0BCCB
+      4C9A7C46C6AB37EB6B0E20EA557D955B2FB5C2D768DF87ED565C3D67E97F603B
+      228458D67F32253A1F75617FBCC71280D040E5ED28C44F3AD1458989EBE4C0E0
+      5F8E00380B1BE901F4D37EAFA1C3BADAA49942EF4CC54CEFCC65009AA3BE3DC0
+      F02D5D83683890A8B15B795340D1CA1BD390DE442B12A0E283F42D2250C9B640
+      C23B539FCB5720EAEB47869B754D5E6C0DC4DF9B0B0039600E3D549E4A295508
+      62ACDD9F1CB00CC0B8FFC9021BC802DFCE3500AB6406E014FD946B65DAFF2B9D
+      D8FF4E02B8C074DEE2C955E3A507EE1A4E155BD17C005C643ABF643E0298F75B
+      E818D3455CC0E09E70207EB4D88AE603A08F65BD3FAD4951AED1C201C47C7B29
+      3CDCA713C5C80F09145B51CB009ABEF4ADE31C7FD4891C7325CC88E6AF708168
+      A0D0F2132B41BEA933178A797FA601D65E6AE58C33673A77C4D3462E75D35491
+      CE1E502013EFCF0BC05CBBD31A65E364FE0BB1D32E3529F81CF9625D33F5B11E
+      D000EBA598F431270184A2DE08B92EFAF376425A226E923D8393790150C96415
+      D85430DFE984F2C1A8E7659AE00D8372BBC8FAEFFE57BF7C837A85CEC366FB83
+      7AEF360076D0A0CF90347CBF5796655110808C556648AB4C59A68BD94053F1C7
+      9BC4729D784C02BE5E4BAB140C206B9D4CCA43BD058C59B91E898B46F9E1C1E3
+      8528DE74E8BE553C55A2BE374F18AAEC4B6C69148AF99E44C48F4C40FCCDB2A9
+      C577F2492DD24DB3935835B5788DA1DAFED4E2B4C522DE2A0E4C0DAC2D25774B
+      17B9B257EE79B6229D76DD20386E9C4AEE56B3DC2C9C46CE2577357230BD3ECC
+      04D63B9A5ED728733B9D855D74C536B3DCC45721741C009B5DDF3FF0F1FFDD36
+      B601980632ABBF98E01880E83C777EB2BB63EBD189D958C0C93FF9D4A048A1EF
+      247D741E70E48AFA93EF4AA10500C5A60500C5A67F0176A00E4FA0A718A50000
+      000049454E44AE426082}
+  end
+  object PngSpeedButton2: TPngSpeedButton
+    Left = 521
+    Top = 444
+    Width = 54
+    Height = 54
+    Hint = 'Salir de la aplicaci'#243'n'
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = Button1Click
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000002084944415478DAED994B
+      4B424114C7CFF8287B5196D12684C432173D7021B4C84DF8A06E46F6DA4444DF
+      2082FA026D23FA1E3D2C88285B9446D0AA164505568B964992AD22759A634851
+      A18657BD53F3DB0C722FFAFFDD71EE9C7B0F01CE21A50E2004321D0CDC5023A8
+      E2CB40C1C13E1A0A9823422884E23431EF31EBC2B208607842E26714405FC0E0
+      5FC34413494D97DB4CEEF317B87B5D6357DE57ACF069D8055B7599B463F90BDC
+      BEC6D850536C01C693D3A4AD93438096207C0A2690F3CD45080801212004FEA1
+      C0FED635F4496D40543FFFBCE20516E7F6A0A5B50146A63A4157A9E55300D11B
+      2A6062C60686A62A3E05109C019C099C112E055221D85A700E5AC0EE30F22990
+      C6D6D30C6E9F153CE6323E0510FC2B852F22F547DB52B4A0029942E40DA1614A
+      C11BDC902EF91478274A5474FC604DDAE7550049B099980BFA0756F815206421
+      B8DEBFC4A3C00324E9C8E1A614CA749252052E4942ED3DD8F2647DC5A2B8DBA8
+      D9DA08E7A791DA939DFE582EDFA528017BAF119C5E0BB878DBC8D4AC94C01D18
+      776284AB52A2B2AA0C46A7BBC068FA7801C88D0096D1584E6359FD192E0470B1
+      0E4F7640B94EF3EDB8E205F6FC57A9C5CAED236536848010100242E06F083CB3
+      A1BA04F9634CA0560E013F1B868A9D5EB626DFEEDD4BBB9AAA8E8BD966653C26
+      939A6E59DAACC8A746B7130ADBB1C48797000B3FFB9BF05905784008949A372F
+      A825405CFCB3AF0000000049454E44AE426082}
+  end
+  object PngSpeedButton3: TPngSpeedButton
+    Left = 7
+    Top = 444
+    Width = 54
+    Height = 54
+    Hint = 'Acerca de esta aplicaci'#243'n'
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = BBAcercaClick
+    PngImage.Data = {
+      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+      8700000006624B474400FF00FF00FFA0BDA793000001A64944415478DAEDD9B1
+      4B026118C7F1E7CDB2E8EE8AA2A128A86C0C82A041C808DA5BDB0A8240BC8668
+      8B966C68686908CC86C0A1A6D6FE01210C242408DA422D08A708F4B5B2D0B7D7
+      2428D33A057DEE81F7379D37BC7C3FF04E2703E263D8010A801DA000D8010D05
+      8C9F0A67F6912FB3825801C6C6E4AB9E26753D01885B9977D4EBD043312F7BAF
+      1930147C1E6C13F933F938D9A4E86A8B151C2DF3775E2D65193012121DEC8547
+      E5E30472FCD7AE3AFB74F7CD027BB3047005F8BA60620FBBFAFB0483B5A4CFD8
+      B704180DA42FE59D9FC28E2E4B8D264CDD6D0D70C0B9346BD8C965CB244CA3CB
+      222023B06B2B4D027EF5360C3037DC0A5B1E27140FF29FE7207C9FA705882C6A
+      30A0978E7F90C7CD9C6469012E9634E8D74AC7A7B880E9636280E215DA996DFF
+      BC429BE1577A57A8115300EC351510F7E93F7EBB825C01144001144001144001
+      1400730A803DEA80B4047453064424C0431620837C49D338A40AA8EDE3AECD00
+      B57F5EB70120272FCD75DD7F7054023060BB7153DF4086D5076002B6E3AB861F
+      3BB62E809DE3FF05D83DFE4F0085F8AA005720E3A7105F154069E4011FC33A0C
+      402E2BB9D30000000049454E44AE426082}
   end
   object BCalcular: TButton
-    Left = 333
-    Top = 21
-    Width = 93
-    Height = 36
+    Left = 202
+    Top = 359
+    Width = 177
+    Height = 61
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
@@ -204,90 +379,131 @@ object FCalc: TFCalc
     Caption = 'Calcular'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -14
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -27
+    Font.Name = 'Arial'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnClick = BCalcularClick
   end
-  object Button1: TButton
-    Left = 205
-    Top = 250
-    Width = 70
-    Height = 31
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Cancel = True
-    Caption = 'Salir'
-    TabOrder = 2
-    OnClick = Button1Click
-  end
-  object BBAcerca: TBitBtn
-    Left = 445
+  object Panel1: TPanel
+    Left = 0
     Top = 0
-    Width = 34
-    Height = 33
-    HelpType = htKeyword
+    Width = 582
+    Height = 164
     Margins.Left = 4
     Margins.Top = 4
     Margins.Right = 4
     Margins.Bottom = 4
-    Caption = ' '
-    Kind = bkHelp
-    NumGlyphs = 2
-    TabOrder = 3
-    TabStop = False
-    OnClick = BBAcercaClick
-  end
-  object BLimpiar: TButton
-    Left = 193
-    Top = 94
-    Width = 93
-    Height = 31
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Caption = 'Limpiar'
-    TabOrder = 4
-    TabStop = False
-    OnClick = BLimpiarClick
-  end
-  object NBMonto: TNumberBox
-    Left = 88
-    Top = 27
-    Width = 114
-    Height = 24
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Alignment = taRightJustify
-    CurrencyFormat = nbcfNone
-    DisplayFormat = '0.00'
-    Mode = nbmCurrency
-    MaxLength = 12
-    TabOrder = 5
-    SpinButtonOptions.ButtonWidth = 21
-  end
-  object NBIVA: TNumberBox
-    Left = 276
-    Top = 27
-    Width = 44
-    Height = 24
-    Margins.Left = 4
-    Margins.Top = 4
-    Margins.Right = 4
-    Margins.Bottom = 4
-    Alignment = taRightJustify
-    CurrencyFormat = nbcfNone
-    DisplayFormat = '0.00'
-    Mode = nbmCurrency
-    MaxLength = 5
-    TabOrder = 6
-    SpinButtonOptions.ButtonWidth = 21
+    Align = alTop
+    Caption = 'Panel1'
+    Color = clGradientInactiveCaption
+    ParentBackground = False
+    ShowCaption = False
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 408
+      Top = 39
+      Width = 85
+      Height = 32
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Alignment = taCenter
+      AutoSize = False
+      Caption = '% IVA'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 89
+      Top = 39
+      Width = 223
+      Height = 32
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Monto'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object NBMonto: TNumberBox
+      Left = 89
+      Top = 73
+      Width = 223
+      Height = 40
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Alignment = taRightJustify
+      CurrencyFormat = nbcfNone
+      DisplayFormat = '#,##0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Arial'
+      Font.Style = []
+      Mode = nbmCurrency
+      MaxLength = 12
+      ParentFont = False
+      TabOrder = 0
+      SpinButtonOptions.ButtonWidth = 21
+    end
+    object NBIVA: TNumberBox
+      Left = 408
+      Top = 73
+      Width = 85
+      Height = 40
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Alignment = taRightJustify
+      CurrencyFormat = nbcfNone
+      DisplayFormat = '0.00'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -27
+      Font.Name = 'Arial'
+      Font.Style = []
+      Mode = nbmCurrency
+      MaxValue = 100.000000000000000000
+      MaxLength = 5
+      ParentFont = False
+      TabOrder = 1
+      SpinButtonOptions.ButtonWidth = 21
+    end
+    object CB1: TCheckBox
+      Left = 184
+      Top = 131
+      Width = 213
+      Height = 21
+      Margins.Left = 4
+      Margins.Top = 4
+      Margins.Right = 4
+      Margins.Bottom = 4
+      Caption = 'IVA incluido en el Total'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -17
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+      OnClick = CB1Click
+    end
   end
 end

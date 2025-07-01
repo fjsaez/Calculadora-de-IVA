@@ -4,13 +4,15 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Mask, ExtCtrls, Buttons, Vcl.NumberBox;
+  Dialogs, StdCtrls, Mask, ExtCtrls, Buttons, Vcl.NumberBox, PngSpeedButton,
+  Vcl.Clipbrd;
 
 type
+  TCalculo = record
+    SubTotal,IVA,Total: string;
+  end;
+
   TFCalc = class(TForm)
-    Label1: TLabel;
-    CB1: TCheckBox;
-    Label2: TLabel;
     Label3: TLabel;
     LSubTotal: TLabel;
     LIVA: TLabel;
@@ -18,12 +20,18 @@ type
     LTotal: TLabel;
     Label8: TLabel;
     BCalcular: TButton;
-    Button1: TButton;
-    Bevel1: TBevel;
-    BBAcerca: TBitBtn;
-    BLimpiar: TButton;
+    SBMemSubTotal: TPngSpeedButton;
+    SBMemIVA: TPngSpeedButton;
+    SBMemTotal: TPngSpeedButton;
+    PngSpeedButton1: TPngSpeedButton;
+    PngSpeedButton2: TPngSpeedButton;
+    PngSpeedButton3: TPngSpeedButton;
+    Panel1: TPanel;
     NBMonto: TNumberBox;
     NBIVA: TNumberBox;
+    CB1: TCheckBox;
+    Label2: TLabel;
+    Label1: TLabel;
     function EliminaEspacio(Cadena: string): string;
     procedure Button1Click(Sender: TObject);
     procedure BCalcularClick(Sender: TObject);
@@ -32,16 +40,21 @@ type
     procedure CB1Click(Sender: TObject);
     procedure BLimpiarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SBMemSubTotalClick(Sender: TObject);
+    procedure SBMemIVAClick(Sender: TObject);
+    procedure SBMemTotalClick(Sender: TObject);
   private
     { Private declarations }
+    procedure ActivaCopiado;
   public
     const
-      Version='v1.5';  //versión del programa
-      Fecha='Sep. 2.010';
+      Version='v2.0';  //versión del programa
+      Fecha='Sep. 2010 - Oct. 2024';
   end;
 
 var
   FCalc: TFCalc;
+  Calculo: TCalculo;
   sEnt: string;
 
 implementation
@@ -56,6 +69,16 @@ begin
   Result:=Cadena;
 end;
 
+procedure TFCalc.ActivaCopiado;
+var
+  Activo: boolean;
+begin
+  Activo:=(Calculo.SubTotal<>'') and (Calculo.IVA<>'') and (Calculo.Total<>'');
+  SBMemSubTotal.Enabled:=Activo;
+  SBMemIVA.Enabled:=Activo;
+  SBMemTotal.Enabled:=Activo;
+end;
+
 {Botón Salir}
 procedure TFCalc.Button1Click(Sender: TObject);
 begin
@@ -64,6 +87,12 @@ end;
 
 procedure TFCalc.BLimpiarClick(Sender: TObject);
 begin
+  //el registro:
+  Calculo.SubTotal:='';
+  Calculo.IVA:='';
+  Calculo.Total:='';
+  ActivaCopiado;
+  //los componentes:
   LIVA.Caption:='0,00';
   LTotal.Caption:='0,00';
   LSubTotal.Caption:='0,00';
@@ -82,25 +111,25 @@ end;
 procedure TFCalc.BCalcularClick(Sender: TObject);
 var
   Importe,IVA,SubTotal: Single;
-  STotal,SIVA,Total: string[15];
 begin
   Importe:=NBMonto.Value;
   IVA:=NBIVA.Value;
   if CB1.Checked then
   begin   //Cálculo con el IVA incluido:
-    STotal:=FormatFloat('#,##0.00',Importe/((IVA/100)+1));
-    SIVA:=FormatFloat('#,##0.00',Importe-(Importe/((IVA/100)+1)));
-    Total:=FormatFloat('#,##0.00',Importe);
+    Calculo.SubTotal:=FormatFloat('#,##0.00',Importe/((IVA/100)+1));
+    Calculo.IVA:=FormatFloat('#,##0.00',Importe-(Importe/((IVA/100)+1)));
+    Calculo.Total:=FormatFloat('#,##0.00',Importe);
   end
   else
   begin   //Cálculo sin el IVA incluido:
-    STotal:=FormatFloat('#,##0.00',Importe);
-    SIVA:=FormatFloat('#,##0.00',Importe*(IVA/100));
-    Total:=FormatFloat('#,##0.00',Importe+(Importe*IVA/100));
+    Calculo.SubTotal:=FormatFloat('#,##0.00',Importe);
+    Calculo.IVA:=FormatFloat('#,##0.00',Importe*(IVA/100));
+    Calculo.Total:=FormatFloat('#,##0.00',Importe+(Importe*IVA/100));
   end;
-  LSubTotal.Caption:=STotal;
-  LIVA.Caption:=SIVA;
-  LTotal.Caption:=Total;
+  LSubTotal.Caption:=Calculo.SubTotal;
+  LIVA.Caption:=Calculo.IVA;
+  LTotal.Caption:=Calculo.Total;
+  ActivaCopiado;
 end;
 
 procedure TFCalc.FormKeyPress(Sender: TObject; var Key: Char);
@@ -114,8 +143,24 @@ end;
 
 procedure TFCalc.FormShow(Sender: TObject);
 begin
+  ActivaCopiado;
   Caption:=Caption+' '+Version;
   NBMonto.SetFocus;
+end;
+
+procedure TFCalc.SBMemIVAClick(Sender: TObject);
+begin
+  ClipBoard.AsText:=Calculo.IVA;
+end;
+
+procedure TFCalc.SBMemSubTotalClick(Sender: TObject);
+begin
+  ClipBoard.AsText:=Calculo.SubTotal;
+end;
+
+procedure TFCalc.SBMemTotalClick(Sender: TObject);
+begin
+  ClipBoard.AsText:=Calculo.Total;
 end;
 
 procedure TFCalc.BBAcercaClick(Sender: TObject);
