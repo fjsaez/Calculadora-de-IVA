@@ -35,7 +35,6 @@ uses Calc;
 
 procedure TFAcerca.BitBtn1Click(Sender: TObject);
 begin
-  //FCalc.NBMonto.SetFocus;
   Close
 end;
 
